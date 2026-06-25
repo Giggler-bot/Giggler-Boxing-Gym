@@ -23,8 +23,8 @@ export function Header() {
   return (
     <header className="sticky top-0 z-40 border-b border-white/5 bg-background/80 backdrop-blur-xl">
       <div className="container-x flex h-16 items-center justify-between">
-        <a
-          href="/"
+        <Link
+          to="/"
           className="flex items-center gap-2 font-display text-xl tracking-wider"
         >
           <span className="grid h-9 w-9 place-items-center bg-primary text-primary-foreground">
@@ -33,11 +33,11 @@ export function Header() {
           <span>
             GIGGLER <span className="text-primary">BOXING GYM</span>
           </span>
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-6 lg:flex">
           {NAV.slice(0, 8).map((n) => (
-            <a
+            <Link
               key={n.to}
               to={n.to}
               className="text-xs font-semibold uppercase tracking-[0.18em] text-white/70 transition-colors hover:text-white"
@@ -45,7 +45,7 @@ export function Header() {
               activeOptions={{ exact: n.to === "/" }}
             >
                 {n.label}
-            </a>
+            </Link>
           ))}
         </nav>
       </div>
